@@ -41,4 +41,4 @@ jobs:
         login-server: http://hub.docker.com
         
     - name: Docker push
-      run: ./gradlew dockerPushDockerHub
+      run: ./gradlew dockerPushDockerHub --debug
