@@ -27,18 +27,11 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
       
-    - name: Build a Docker Image
+    - name: Docker Build
       run: ./gradlew docker
-      
-    - name: Docker Login
-      uses: Azure/docker-login@v1
-      with:
-        # Container registry username
-        username: ${{ secrets.DOCKER_HUB_USERNAME }}
-        # Container registry password
-        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-        # Container registry server url
-        login-server: http://hub.docker.com
         
-    - name: Docker push
-      run: ./gradlew dockerPushDockerHub --debug
+    - name: Docker Authentication
+      run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+    - name: Docker Publish
+      run: ./gradlew dockerPushDockerHub
