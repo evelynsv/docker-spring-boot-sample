@@ -34,7 +34,7 @@ jobs:
       run: ./gradlew dockerPushDockerHub
     
     - name: Docker pull
-      run: docker pull docker-spring-boot-sample
+      run: docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/docker-spring-boot-sample:2.0.0
     
     - name: Heroku Auth
       run: docker login --usersame=${{ secrets.DOCKER_HUB_USERNAME }} --password=${{ secrets.HEROKU_KEY }} registry.heroku.com
