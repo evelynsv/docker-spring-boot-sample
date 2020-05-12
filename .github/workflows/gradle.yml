@@ -33,14 +33,11 @@ jobs:
     - name: Docker Publish
       run: ./gradlew dockerPushDockerHub
     
-    - name: Deploy Docker Image to Heroku App
-      uses: jctaveras/heroku-deploy@v1.1.0
-      with:
-        # Email linked to your Heroku account
-        email: ${{ secrets.HEROKU_EMAIL }}
-        # Your Heroku API Key
-        api_key: ${{ secrets.HEROKU_KEY }}
-        # Your Heroku App Name
-        app_name: spring-boot-docker-sample
-        # Dokerfile path
-        dockerfile: ./Dockerfile
+    - name: Docker pull
+      run: docker pull docker-spring-boot-sample
+    
+    - name: Heroku Auth
+      run: docker login --usersame=${{ secrets.DOCKER_HUB_USERNAME }} --password=${{ secrets.HEROKU_KEY }} registry.heroku.com
+      
+    - name: Tag
+      run: docker tag docker-spring-boot-sample registry.heroku.com/spring-boot-docker-sample/web
