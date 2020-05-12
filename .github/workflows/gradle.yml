@@ -36,7 +36,7 @@ jobs:
         # Container registry username
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         # Container registry password
-        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
         # Container registry server url
         login-server: http://hub.docker.com
         
