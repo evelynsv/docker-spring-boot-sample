@@ -20,7 +20,6 @@ after_success:
 - export TEXT="[build version] $TAG<br />[datetime] $TIMESTAMP<br />[changelog] $GIT_LOG<br/>"
 
 deploy:
-  heroku stack: set heroku-18
   provider: heroku
   api_key:
     secure: GqG+8lv3CBwxf9AUtXwZ8o6cEjCs9prt7qzhpTGOMG9I01jcC1Wj3/y49EV33/wzxEyLQgX/CRrTpoSi67V+doBcR5hLiQqVzwJYWRJPnSPvrz0afOtSlhzsY9u3ONFg9n7CvtsvP0hEonbWHUq9/ubLb36lRMhppE18yn6KpaI9USbtBJgLUXCEqShk/1CL2rhxoMYvsHTXoBRaPwovjO7FqI9VRF9o1mBilAWppKowXSj45v8fBOR0VwTjfP4Em9//6PfU5fx/1s1br6jZp0GpHA1jZ3MpseFveV5kM6F81JoWLRa12E+LDpMuNrwYRIr9j4ChHfmIKN91Hygu8h6TGOdjZKsXjO3nBrFhwtMYkobgyaOhDxhARvMnBXi9fexljhLo642fjzK9zHF4TV0LjqVTJGtYW9YLK4yIYXOWwPzhZ+muirv03xGhKVK8iVuKaV2GJpt8cQIuA/knDJFqG6u6qDK8O5fNMdVFVIFBnI2SK2NWEA4ccoyQRDSlMnO16TkeMV0Q8qYYbA41Pwj4pV2mGe+skx/y/RYubrTGeh3BhHsDHMF46B0/iHD3uVDxDMd+e0J7FgLp3AfTG/eR71AIWfTbGms2ugz+nKlhHb5wfXkOEC0x/Rn98YUVZSwNgTrF9DmKIYtfljj/1F7L5OIlBjXe/1Aedbz1tK0=
