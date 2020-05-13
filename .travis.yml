@@ -38,8 +38,8 @@ after_success:
 deploy:
   provider: heroku
   api_key:
-    secure: "21028d83-dd35-49b2-835e-42aba1e4d46b"
+    secure: "$HEROKU_API_KEY"
   app: docker-spring-boot-sample
   on:
     tags: true
-    repo: "evelynsv/docker-spring-boot-sample"
+    repo: "evelynsv/$IMAGE_NAME"
