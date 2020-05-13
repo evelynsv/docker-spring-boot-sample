@@ -32,14 +32,14 @@ after_success:
   - export TIMESTAMP=`date`
   - export GIT_LOG=`git log -1 --pretty=%B $COMMIT`
   - export TEXT="[build version] $TAG<br />[datetime] $TIMESTAMP<br />[changelog] $GIT_LOG<br />"
-  - chmod +x send_to_teams.sh && ./send_to_teams.sh
+
 
 # Allow Travis to help deploy the app on Heroku
 deploy:
   provider: heroku
   api-key:
     secure: "$HEROKU_API_KEY"
-  app: my-springboot-helloworld
+  app: docker-spring-boot-sample
   on:
     tags: true
     repo: "$IMAGE_NAME"
