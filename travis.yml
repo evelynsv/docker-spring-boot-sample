@@ -1,9 +1,0 @@
-language: java
-jdk:
-  - openjdk8
-services:
-  - docker
-
-env:
-  global:
-    - secure: <encrypted_HEROKU_API_KEY>

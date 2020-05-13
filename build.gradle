@@ -15,7 +15,7 @@ repositories {
 }
 
 docker {
-	name "docker-spring-boot-sample:$project.version"
+	name "docker-spring-boot-sample"
 	tag "DockerHub", "evelynvieira/docker-spring-boot-sample:$project.version"
 	copySpec.from("build/libs").into("/")
 	buildArgs([BUILD_VERSION: "$project.version",JAR_BASE_NAME: "docker-spring-boot-sample"])

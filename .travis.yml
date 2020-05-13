@@ -1,0 +1,45 @@
+language: java
+jdk:
+- openjdk8
+services:
+- docker
+env:
+  global:
+    #HEROKU_API_KEY
+  - secure: Kl9adTgDOyzUYd3CR2hPB+dvTaOEsfk54h9AWpW1iTFvs0KaRyzkpHokJrJHiO68XikLVYLtmb9ILAaT1uumWGGXf2tqpdJtv87pXUTzQgqzK7SYscVvB7viHND3pm2s4vxov34rnS1Vyn1Mbwu3wUIYP6fWR5UTHmij4vc+xK0RAxLl8qpBceE+eATMBeA2KMP1PvJwmbi0EkPOP5P0BZ8stZ/MT/EbsyuFc0c4zNcC7/LvlVcP3EOEnqzP2/VlwPoKCKety5hugK9YuPYAqlN96+a6tHJdSaP/UKQS8gO4gS2/zQSw1SAbyCZmoiHP7wEc0zu8B0NYB5nSBVzavp0P6V/pKMxWhNSbcmvwixd7F4h8N7eE/owh/1dAB24kIIOTgZX/94QuQBLX81Rc/b8ALIs8Snx+wo1zz7nlyFaL+y+zio8OvTD5ARO0qkKLKfYjOrhG2wDgowGslHQeF+umczUVVBjFwBH/7g3BsgEW0soUxvL+57lk9FnJ6m30ldtdAOBgkQOQh8gSyVfS2FH+4G9OsB+KbhsTpnSWqppwONDjsiB+JViJYeaUown7qR22BckAtDhuYMARMdqTHQErK1iWJFbaaDTJO2mc7FxmVFI9J9lOsJ26eJN9jSuVdpRoD6exaF0UbFHS781knJFZe6zNIwzpg42QMabE90A=
+    #DOCKER_USER
+  - secure: S2RQDgUq3xYdqnIMmWsuQBZ29/CrvBz35X5lZREGif0zcd9Dr+D5vOq2sik5TVGgxeeuE5FvS6lNmHBR066sfw4fb1NlzP0ogPPQG9szOzneh6X6THC5xLRbBESdlh11brpuqHjbDlLvPmahxBadwU3LmEWWfHGZFGBeK3fq+NNosCEzNM0SwY+DaY42OruYIBR1z7KQLHM2N8EDPQa3PE2oMwM5A6ydCfcYURCQ9A77AMWvbZJ1ojzNC4ZMO+5Y44tVDv9aeIo77FLNsdyoKo8vzaEFyQF4izLrNvsVGldXjxAWjko0V5iEkQJfCHfdV23DKPTjrOTKJlaDxa3MjNBFgLEaOsZX4KC4szH3xIXl4zEgDvuLNUpvRCImDBXl1oMqaOAmMCrDEbZgtu9Uzgo74vhUMAW4MeXmLGxedXe1V0DQk+zwTEANKIMPd/RZ9XtIxFUg362Yc0x2C233nHGpHvtsaqZJQcFk20MpAJeqJltdQtka1CXb4dtqYSiO9h8YPXbfjKEANgX87AQqStmtCqNxVoi3BqFN7szZfoE7pseUwjVj1oIyngRLRI7o5ZNiohQxWhoR3k0uoOZRU73Q8D+EDhQhDJiF5R3i2uBi0BtI2oAQ243qRG3cN7GmIf53dMtdnSWeshbjhTq/34RT12+qDG9OnNsDC0Mbck8=
+    #DOCKER_PASSWORD
+  - secure: BpSi3RprQ4Zf577mixXGaaX0EP7DSV9NE18nf1TBKAsnUhtctVP21HPyoTXHAxZrydEhGtn6AkivCF6dIWGy2kvN7yBoBgVdmQr0OAqYbRVR1eIeVUoCxLl7sedBxJY+/SBy6uBS3jnzZy9zOR0xGU/s849/mtgD5DXgkcnCydU/ftz60ByqgdSppDnFNvO5pc2n9Okg+CoutAdPiBEtkAzEdTNbIii6wQhacMoen6HNBUSI7yFrxMgnrFctxuYFlfUnXuClsjWR3gIDyIvljzVssyCYXHNMTMJtQdvmVN5FHq6JGiBcDO7zualGjcpk9tZkRpeRAhecfd2ZPh0vHTIyXcaGyLyggZSho6C8G3gy5lHSaGGS3myi0MS1perrtMdo8pyYcUlWnhefuYFVT0jO2TmtmOiVSRD7tVq2joCnxdkTDPSlzIZ8+sY41VACtNgSUEleHhAHlF1lKA4El1Floq8NdB9+HgfkkFHWYHRvStm1SXamMnmKT8/SLdu/ZpGzin9XP60X9a2LbsN1va43wFj8CqA4tqq7yv82ZXakVYLBFspZ6JkNd3AREOUF7YqZ5nLNHvasvkoUE5WV6ZAOtZO2rjr9wh1KB4NnjeHquzaxz9L4YShhAIBCGOeXknF53x2xZ943m0ys4WrGu+OCbocS4tXIqS0ybQUXDBM=
+    #IMAGE_NAME
+  - secure: RNTm1NYaYZHHs4EY7UAoNKEIdsuz6hEO1KUEOZA9CZiTrp/IPixfZMSDeed9bGzJYjQqQLlXPgyFceEMj8jfHZ8jl8Magjb8sbM1+cVvENmRXhKCm59es4sDhCgXUGrbpy50sYB/4bRjfR23aHNz09BgU+K5QJBEWraPt8IDWpqRNlYmVSVhWktuQlTv5+QgdHa5QqDCSVN65o2H21QCAHyQCOJU+DPkN8idQNpZ/xV8wy4wdzgG86KXdwH0JPzSYKy+bibuRYtz/CxIMJlsh9OFgzFvd0RalHyUGQgKZnkF0RJHQOg6wMTR3FvCwxXwXbPXNcS7OxLtC/jev22Y+W/auVU6K66uTLmstpPnwMN8EgDiCD20XhFhaZ2ouazG7O2JHCDNATP3wZbtkoeslD7SMgPBfBnZ2mC+t/0O8fKlB5pcMZT2VHlGnJZF5a83ToFsfCyy9ZucvNWjBQqMR3Yo4Jq/oUkX2nrN8Cc9y3Ll8Z2Ip4fbm8xC/juUV4SrdyYLzv0/exU5+5qzHlNckNYAiXXhPhOUSzJUxloi01VoHTCPH0h/xhpPqAteYjxAstTYB+074ZeqHhRfowB5KL7IkrI2E1gwXN9WKQKtR0A1LxloilOoUjOzp5+dVjaPRCvvIdxWOWQk+acBBxOmmQXRLzFMENPwhi0/M40zxRg=
+
+before_install:
+  - docker pull openjdk:8-jdk-alpine
+
+# Test & Build SpringBoot app
+script:
+  - ./gradlew build
+
+# Create Docker image for our app and push it to Dockerhub repository
+after_success:
+  - export COMMIT=${TRAVIS_COMMIT::7}
+  - export TAG=`if [ ! -z "$TRAVIS_TAG" ]; then echo "$TRAVIS_TAG"; else echo "$TRAVIS_BRANCH--$COMMIT"; fi`
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TAG
+  - docker push $IMAGE_NAME:$TAG
+  - export TITLE="$IMAGE_NAME:$TAG is built properly and pushed to Dockerhub"
+  - export TIMESTAMP=`date`
+  - export GIT_LOG=`git log -1 --pretty=%B $COMMIT`
+  - export TEXT="[build version] $TAG<br />[datetime] $TIMESTAMP<br />[changelog] $GIT_LOG<br />"
+  - chmod +x send_to_teams.sh && ./send_to_teams.sh
+
+# Allow Travis to help deploy the app on Heroku
+deploy:
+  provider: heroku
+  api-key:
+    secure: "$HEROKU_API_KEY"
+  app: my-springboot-helloworld
+  on:
+    tags: true
+    repo: "$IMAGE_NAME"
