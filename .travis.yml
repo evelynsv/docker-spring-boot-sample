@@ -3,33 +3,27 @@ jdk:
 - openjdk8
 services:
 - docker
-
 before_install:
-  - docker pull openjdk:8-jdk-alpine
-
-# Test & Build SpringBoot app
+- docker pull openjdk:8-jdk-alpine
 script:
-  - ./gradlew build
-
-# Create Docker image for our app and push it to Dockerhub repository
+- "./gradlew build"
 after_success:
-  - export COMMIT=${TRAVIS_COMMIT::7}
-  - export TAG=`if [ ! -z "$TRAVIS_TAG" ]; then echo "$TRAVIS_TAG"; else echo "$TRAVIS_BRANCH--$COMMIT"; fi`
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
-  - docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TAG
-  - docker push $DOCKER_USER/$IMAGE_NAME:$TAG
-  - export TITLE="$IMAGE_NAME:$TAG is built properly and pushed to Dockerhub"
-  - export TIMESTAMP=`date`
-  - export GIT_LOG=`git log -1 --pretty=%B $COMMIT`
-  - export TEXT="[build version] $TAG<br />[datetime] $TIMESTAMP<br />[changelog] $GIT_LOG<br />"
-
-
-# Allow Travis to help deploy the app on Heroku
+- export COMMIT=${TRAVIS_COMMIT::7}
+- export TAG=`if [ ! -z "$TRAVIS_TAG" ]; then echo "$TRAVIS_TAG"; else echo "$TRAVIS_BRANCH--$COMMIT";
+  fi`
+- docker login -u $DOCKER_USER -p $DOCKER_PASS
+- docker tag $IMAGE_NAME:latest $IMAGE_NAME:$TAG
+- docker push $DOCKER_USER/$IMAGE_NAME:$TAG
+- export TITLE="$IMAGE_NAME:$TAG is built properly and pushed to Dockerhub"
+- export TIMESTAMP=`date`
+- export GIT_LOG=`git log -1 --pretty=%B $COMMIT`
+- export TEXT="[build version] $TAG<br />[datetime] $TIMESTAMP<br />[changelog] $GIT_LOG<br
+  />"
 deploy:
   provider: heroku
   api_key:
-    secure: "$HEROKU_API_KEY"
+    secure: GqG+8lv3CBwxf9AUtXwZ8o6cEjCs9prt7qzhpTGOMG9I01jcC1Wj3/y49EV33/wzxEyLQgX/CRrTpoSi67V+doBcR5hLiQqVzwJYWRJPnSPvrz0afOtSlhzsY9u3ONFg9n7CvtsvP0hEonbWHUq9/ubLb36lRMhppE18yn6KpaI9USbtBJgLUXCEqShk/1CL2rhxoMYvsHTXoBRaPwovjO7FqI9VRF9o1mBilAWppKowXSj45v8fBOR0VwTjfP4Em9//6PfU5fx/1s1br6jZp0GpHA1jZ3MpseFveV5kM6F81JoWLRa12E+LDpMuNrwYRIr9j4ChHfmIKN91Hygu8h6TGOdjZKsXjO3nBrFhwtMYkobgyaOhDxhARvMnBXi9fexljhLo642fjzK9zHF4TV0LjqVTJGtYW9YLK4yIYXOWwPzhZ+muirv03xGhKVK8iVuKaV2GJpt8cQIuA/knDJFqG6u6qDK8O5fNMdVFVIFBnI2SK2NWEA4ccoyQRDSlMnO16TkeMV0Q8qYYbA41Pwj4pV2mGe+skx/y/RYubrTGeh3BhHsDHMF46B0/iHD3uVDxDMd+e0J7FgLp3AfTG/eR71AIWfTbGms2ugz+nKlhHb5wfXkOEC0x/Rn98YUVZSwNgTrF9DmKIYtfljj/1F7L5OIlBjXe/1Aedbz1tK0=
   app: docker-spring-boot-sample
   on:
     tags: false
-    repo: "evelynsv/$IMAGE_NAME"
+    repo: evelynsv/$IMAGE_NAME
